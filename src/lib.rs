@@ -1,5 +1,3 @@
-#![feature(vec_drain_as_slice)]
-
 extern crate flame;
 #[macro_use] extern crate flamer;
 extern crate im_rc;

@@ -48,7 +48,7 @@ fn parse_expr(
 
                 if inner_binding.depth == Some(0) {
                     inner_binding.depth = Some(binding.depth.unwrap_or(0) + 1);
-                } else if inner_binding.name() == "sum" {
+                } else if inner_binding.name() == "fib" {
                     
                     inner_binding.function_depth = 0; // Atto needs to be able to tell where the variable we're referencing is. If the depth and function depth is equal, we're in the same scope as the variable.
                     // This specifically shouldn't be the case for upvalues. `sum` should be @ depth 1, func_depth 1
@@ -111,13 +111,13 @@ fn parse_fn<'a>(
 }
 
 const CODE: &'static str = r#"
-fn sum x is
-    if = x 0
-        1
-    + sum - x 1 sum - x 1
+fn fib x is
+    if < x 2
+        x
+    + fib - x 1 fib - x 2
 
 fn main is
-    sum 12
+    fib 20
 "#;
 
 fn main() {
