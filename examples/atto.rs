@@ -117,7 +117,7 @@ fn fib x is
     + fib - x 1 fib - x 2
 
 fn main is
-    fib 20
+    fib 26
 "#;
 
 fn main() {

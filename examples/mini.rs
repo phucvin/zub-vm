@@ -665,14 +665,14 @@ fn codegen(builder: &mut IrBuilder, ast: &Vec<Statement>) {
 }
 
 const TEST: &'static str = r#"
-let bar = 13.37;
+let bar = 11;
 
 fn foo() {
-  fn baz(c) {
-    return c + bar;
+  fn baz(cc) {
+    return cc + bar;
   }
 
-  return baz(10);
+  return baz(20);
 }
 
 global gangster = foo();
